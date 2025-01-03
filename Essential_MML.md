@@ -75,4 +75,48 @@ The ultimate goal of Machine Learning is learning functions from data, i.e., tra
 
 The domain $\ \mathbf{x} \ $ is usually a vector of variables or features mapping onto a vector of target values.
 
-// ... content continues in similar fashion for remaining sections ...
+### 1.1.3. Matrices
+
+A matrix is a 2-D array of numbers, so each element is identified by two indices instead of just one.
+
+$\mathbf{A} := \begin{bmatrix} {A}_{1,1} & {A}_{1,2} & \ldots & {A}_{1,n}\\ {A}_{2,1} & {A}_{2,2} & \ldots & {A}_{2,n} \\ \vdots & \vdots & \ddots & \vdots \\ {A}_{m,1} & {A}_{m,2} & \ldots & {A}_{m,n}\end{bmatrix}, A_{i,j} \in \mathbb{R}$
+
+If a real-valued matrix $\ \mathbf{A}\ $ has a height of $\ m\ $ (rows) and a width of $\ n\ $ (columns), then we say that $\ \mathbf{A}\ \in \ \mathbb{R}^{mn}.$
+
+$i^{th}\ $ row of $\ \mathbf{A}\ $ is denoted by $\ \mathbf{A}_{i,:}\ $ and $j^{th}\ $ row of $\ \mathbf{A}\ $ is denoted by $\ \mathbf{A}_{:,j}.\ $
+
+Suppose by applying some function $\ f\ $ to $\ \mathbf{A}\ $ the resultant matrix is $\ \mathbf{B}\ $ then the $\ (i,j)^{th}\ $ element of $\ \mathbf{B}\ $ is given by $\ f(\mathbf{A})_{i,j}.\ $
+
+### 1.1.4. Tensors
+
+A tensor is an array with more than two axes. In the general case, an array of numbers arranged on a regular grid with a variable number of axes is known as a tensor. Suppose a tensor named $\ \mathsf{A}\ $ has three dimensions then the element of $\ \mathsf{A}\ $ at coordinates $\ (i, j, k)\ $ is denoted as $\ \mathsf{A}_{i,j,k}.$
+
+### A note on the transpose of matrices:
+
+The transpose of a matrix is the mirror image of the matrix across its principle diagonal line. The transpose of a matrix $\ \mathbf{A}\ $ is denoted by $\ \mathbf{A}^{\mathsf{T}}.$
+
+$\mathbf{A} = \begin{bmatrix} {A}_{1,1} & {A}_{1,2} & \ldots & {A}_{1,n}\\ {A}_{2,1} & {A}_{2,2} & \ldots & {A}_{2,n} \\ \vdots & \vdots & \ddots & \vdots \\ {A}_{m,1} & {A}_{m,2} & \ldots & {A}_{m,n}\end{bmatrix}$
+
+$\mathbf{A}^{\mathsf{T}} = \begin{bmatrix} {A}_{1,1} & {A}_{2,1} & \ldots & {A}_{m,1}\\ {A}_{1,2} & {A}_{2,2} & \ldots & {A}_{m,2} \\ \vdots & \vdots & \ddots & \vdots \\ {A}_{1,n} & {A}_{2,n} & \ldots & {A}_{m,n}\end{bmatrix}$
+
+Vectors can be thought of as matrices that contain only one column. Thus, the transpose of a vector is therefore a matrix with only one row. This can be denoted as $\ \mathbf{x} = {\begin{pmatrix}x_{1},x_{2},x_{3}\end{pmatrix}}^{\mathsf{T}}.$
+
+A scalar can be thought of as a matrix with only a single entry. From this, we can see that a scalar is its own transpose: $\ a = a^{\mathsf{T}}.$
+
+---
+
+## **1.2. Properties of matrix operations**
+
+The operations are as follows:
+
+### 1.2.1. Addition:
+
+If $\mathbf{A}$ and $\mathbf{B}$ are matrices of the same size $m\times n$, then $\mathbf{A} + \mathbf{B}$,
+their sum, is a matrix of size $m\times n.$
+
+### 1.2.2. Multiplication by scalars:
+
+If $\mathbf{A}$ is a matrix of size $m\times n$ and $\alpha$ is a scalar,
+then $\alpha\mathbf{A}$ is a matrix of size $m\times n.$
+
+// ... I can continue with the remaining sections if you'd like ...
