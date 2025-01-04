@@ -119,4 +119,71 @@ their sum, is a matrix of size $m\times n.$
 If $\mathbf{A}$ is a matrix of size $m\times n$ and $\alpha$ is a scalar,
 then $\alpha\mathbf{A}$ is a matrix of size $m\times n.$
 
-// ... I can continue with the remaining sections if you'd like ...
+### 1.2.3. Matrix multiplication:
+
+If $\mathbf{A}$ is a matrix of size $m\times n$ and $\mathbf{B}$ is a matrix of size $n\times p$, then the product $\mathbf{AB}$ is a matrix of size $m\times p.$
+
+### 1.2.4. Vectors:
+
+A vector of length $n$ can be treated as a matrix of size $\ n \times 1,\ $ and the operations of vector addition, multiplication by scalars, and multiplying a matrix by a vector agree with the corresponding matrix operations.
+
+### 1.2.5. Transpose:
+
+If $\mathbf{A}$ is a matrix of size $m\times n$, then its transpose $\mathbf{A}^{\mathsf{T}}$ is a matrix of size $n\times m.$
+
+### 1.2.6. Identity matrix:
+
+An identity matrix is a matrix that does not change any vector when we multiply that vector by that matrix. We denote the identity matrix that preserves $n$-dimensional vectors as $\mathbf{I}_{n}.\ $ Formally, $\mathbf{I}_{n}\in\mathbb{R}_{n\times n},\ $ and
+
+$\forall\ \mathbf{x}\in\mathbb{R}_n,\ \mathbf{I}_{n}\mathbf{x} = \mathbf{x}.$
+
+$\mathbf{I}_{n}\ $ is the $n\times n$ identity matrix; its principle diagonal elements are equal to $1$ and its offdiagonal elements are equal to $0.$
+
+### 1.2.7. Zero matrix:
+
+It is denoted by $0$ the matrix of all zeroes (of relevant size).
+
+### 1.2.8. Inverse:
+
+If $\mathbf{A}$ is a square matrix, then its inverse $\mathbf{A}^{\mathsf{-1}}$ is a matrix of the same size. The matrices that have nonzero determinant have inverses, and are called invertible.
+
+For square matrices,
+
+$\mathbf{A}\mathbf{A}^{-1}=\mathbf{A}^{-1}\mathbf{A}=\mathsf{I}_{n}$
+
+*In many cases, we can treat addition and multiplication of matrices as addition and multiplication of numbers. However, there are some differences between operations with matrices and operations with numbers:*
+
+• Properties such as associative, distributive and commutative are followed in scalar multiplication and matrix addition.
+
+• Matrix multiplication does not commute.
+
+• In general, $\mathbf{AB} \not= \mathbf{BA}$, even if $\mathbf{A}$ and $\mathbf{B}$ are both square matrices. If $\mathbf{AB} = \mathbf{BA}$, then we say that $\mathbf{A}$ and $\mathbf{B}$ commute.
+
+• For a general matrix $\mathbf{A}$, we cannot say that $\mathbf{AB} = \mathbf{AC}$ yields $\mathbf{B} = \mathbf{C}.$ (However, if we know that $\mathbf{A}$ is invertible, then we can multiply both sides of the equation $\mathbf{AB} = \mathbf{AC}$ to the left by $\mathbf{A}^{\mathsf{-1}}$ and get $\mathbf{B} = \mathbf{C}.)$
+
+• The equation $\mathbf{AB} = 0$ does not necessarily yield $\mathbf{A}=0\ \text{ or }\ \mathbf{B}=0.$ For example, take:
+
+$\mathbf{A}= \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix},\ \mathbf{B}= \begin{bmatrix} 0 & 0 \\ 0 & 1 \end{bmatrix}.$
+
+---
+
+### A note on the methods of solving a system of linear equations:
+
+Apart from the usual (direct) methods of solving a system of linear equations, which includes, Elimination Method, Substitution Method, and Cross multiplication Method, there are various other methods of solving a system of linear equations:
+
+* Matrix Method:
+  * Crammer's Rule
+  * Gaussian Elimination
+  * Gauss-Jordan Method
+  * Traingularization Method
+  * Choleskey Method
+  * Partition Method
+
+* Iterative methods:
+  * Jacobi Iterative Method
+  * Gauss-Seidel Iterative Method
+  * SOR Method
+
+It might seem overwhelming at first but as other properties of and special types of matrices are introduced, these methods will become easier to grasp. However, it must be noted that when it comes to solving a system of linear equations, in our case, we require a fast and efficient algorithm, so it would be fine not having some if not most of these methods on your fingertips.
+
+**Note:** *This section will be expanded in the future.*
