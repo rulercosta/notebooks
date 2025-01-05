@@ -187,3 +187,107 @@ Apart from the usual (direct) methods of solving a system of linear equations, w
 It might seem overwhelming at first but as other properties of and special types of matrices are introduced, these methods will become easier to grasp. However, it must be noted that when it comes to solving a system of linear equations, in our case, we require a fast and efficient algorithm, so it would be fine not having some if not most of these methods on your fingertips.
 
 **Note:** *This section will be expanded in the future.*
+
+---
+
+## **1.3. System of Linear Equations**
+
+Using the linear algebra notations and the now defined mathematical objects, we can write a system of linear equations as follows:
+
+$\begin{align}
+\mathbf{A}\mathbf{x}=\mathbf{b}
+\end{align}$
+
+where $\mathbf{A}\in\mathbb{R}^{m\times n}\ $ is a known matrix, $\mathbf{b}\in\mathbb{R}^{m}\ $ is a known vector, and $\mathbf{x}\in\mathbb{R}^{n}\ $ is a vector of unknown variables.
+
+In general, an element of vector $\mathbf{b}:$
+
+$\begin{align}
+\mathbf{b}_{i} = \mathbf{A}_{i,:}\ \mathbf{x}
+\end{align}$
+
+Matrix-vector product notation provides a more compact representation for equations of this form.
+
+In order to solve for the unknown vector in the equation,
+
+$\begin{align}
+\mathbf{A}\mathbf{x}=\mathbf{b}
+\end{align}$
+
+pre-multiply both sides of the equation by the inverse of matrix $\ \mathbf{A},$
+
+$\begin{align}
+\mathbf{A}^{-1}\mathbf{A}\mathbf{x}& =\mathbf{A}^{-1}\mathbf{b}\\
+\mathbf{I}_{n}\mathbf{x}& =\mathbf{A}^{-1}\mathbf{b}\\
+\mathbf{x}& =\mathbf{A}^{-1}\mathbf{b}.
+\end{align}$
+
+When $\mathbf{A}^{-1}$ exists, several different algorithms can find it in closed form. In theory, the same inverse matrix can then be used to solve the equation many times for different values of $\mathbf{b}.\ $ However, $\mathbf{A}^{-1}\ $ is primarily useful as a theoretical tool and should not actually be used in practice for most software applications. Because $\mathbf{A}^{-1}\ $ can be represented with only limited precision on a digital computer, algorithms that make use of the value of $\mathbf{b}$ can usually obtain more accurate estimates of $\mathbf{x}$.
+
+For $\mathbf{A}^{-1}$ to exist, equation $\ \mathbf{A}\mathbf{x}=\mathbf{b}\ $ must have *exactly one solution for every value of $\ \mathbf{b},$* i.e. unique value of $\ \mathbf{x}\ $ for every value of $\ \mathbf{b}.$
+
+It is also possible for the system of equations to have no solutions or infinitely many solutions for some values of $\ \mathbf{b}.$ It is not possible, however, to have more than one but less than infinitely many solutions for a particular $\ \mathbf{b};\ $ if both $x\ \text{and}\ y$ are solutions, then
+
+$\begin{align}
+z = \alpha{x} + (1 −\alpha){y}
+\end{align}$
+
+is also a solution for any real $\ \alpha.$
+
+To analyze how many solutions the equation has, think of the columns of $\ \mathbf{A}\ $ as specifying different directions we can travel in from the origin (the point specified by the vector of all zeros), then determine how many ways there are of reaching $\ \mathbf{b}.\ $ In this view, each element of $\mathbf{x}$ specifies how far we should travel in each of these directions, with $\ \mathbf{x}_{i}\ $ specifying how far to move in the direction of column i:
+
+$\begin{align}
+\mathbf{A}\mathbf{x}=\sum _{i}\mathbf{x}_{i}\mathbf{A}_{:,i}.
+\end{align}$
+
+In general, this kind of operation is called a ***Linear Combination.*** The span of a set of vectors is the set of all points obtainable by linear combination of the original vectors. This particular span is known as the **column space** or the **range** of $\ \mathbf{A}.$
+
+Solution of the equation $\ \mathbf{A}\mathbf{x}=\mathbf{b}\ $ exists if $\ \mathbf{b}\ $ lies in the span of the columns of $\ \mathbf{A}.\ $ To have a solution for all values of $\ \mathbf{b}\in\mathbb{R}^{m},\ $ the column space of $\ \mathbf{A}\ $ must be all of $\ \mathbb{R}^{m}\ $ which implies that $\ \mathbf{A}\ $ must have at least $\ m\ $ columns $(n\geq m)$.
+
+## **1.4. Norms**
+
+In Machine Learning, the size of vectors is measured using a function called a **norm**. Formally, the $\ L^{p}\ $ norm is given by:
+
+$\begin{align}
+\|\mathbf{x}\|_{p} \  = \left( \sum_i \left| x_i \right| ^p \right) ^ {\frac {1}{p}}
+\end{align}$
+
+for $\ p \in \mathbb{R}, p \ge 1. \ $
+
+The $\ L^{p}\ $ norm is a *mapping function.* It maps vectors to non-negative values and satisfies these properties:
+
+* $\ f(x) = 0 \implies x = 0 \ $
+* $\ f(x+y) \le f(x) + f(y)\ $ (the **triangle inequality**)
+* $\ \forall \alpha \ \in \mathbb{R}, f(\alpha x) = \left| \alpha \right|f(x) \ $
+
+For a vector $\ \mathbf{x} \ ,$ the most commonly used norm is the $\ L^{2} \ $ norm, also known as **Euclidean norm**:
+
+$\begin{align}
+\ \|\mathbf{x}\| = \sqrt{x_1^2 + \dots + x_n^2}
+\end{align}$
+
+The $\ L^{1} \ $ norm is used when it's necessary to differentiate between zero and non-zero elements:
+
+$\begin{align}
+\|\mathbf{x}\|_{1} = \sum_{i} \left|x_{i}\right|
+\end{align}$
+
+Two other important norms are:
+
+* **Max norm**:
+$\begin{align}
+\|\mathbf{x}\|_{\infty} = \max_{i} \left|x_{i}\right|
+\end{align}$
+
+* **Frobenius norm** (for matrices):
+$\begin{align}
+\|A\|_{F} = \sqrt{\sum_{i,j}A^{2}_{i,j}}
+\end{align}$
+
+The dot product of two vectors can be written in terms of norms:
+
+$\begin{align}
+\mathbf{x}^{T}\mathbf{y} = \|\mathbf{x}\|_{2}\|\mathbf{y}\|_{2}\cos\theta
+\end{align}$
+
+where $\theta$ is the angle between $\mathbf{x}$ and $\mathbf{y}$.
