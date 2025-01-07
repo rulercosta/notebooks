@@ -143,43 +143,33 @@ A scalar can be thought of as a matrix with only a single entry. From this, we c
 The operations are as follows:
 
 \subsection{Addition}
-
 If $\mathbf{A}$ and $\mathbf{B}$ are matrices of the same size $m\times n$, then $\mathbf{A} + \mathbf{B}$,
-their sum, is a matrix of size $m\times n.$
+their sum, is a matrix of size $m\times n$.
 
 \subsection{Multiplication by scalars}
-
 If $\mathbf{A}$ is a matrix of size $m\times n$ and $\alpha$ is a scalar,
-then $\alpha\mathbf{A}$ is a matrix of size $m\times n.$
+then $\alpha\mathbf{A}$ is a matrix of size $m\times n$.
 
 \subsection{Matrix multiplication}
-
-If $\mathbf{A}$ is a matrix of size $m\times n$ and $\mathbf{B}$ is a matrix of size $n\times p$, then the product $\mathbf{AB}$ is a matrix of size $m\times p.$
-
-\subsection{Vectors}
-
-A vector of length $n$ can be treated as a matrix of size $\ n \times 1,\ $ and the operations of vector addition, multiplication by scalars, and multiplying a matrix by a vector agree with the corresponding matrix operations.
-
-\subsection{Transpose}
-
-If $\mathbf{A}$ is a matrix of size $m\times n$, then its transpose $\mathbf{A}^{\mathsf{T}}$ is a matrix of size $n\times m.$
+If $\mathbf{A}$ is a matrix of size $m\times n$ and $\mathbf{B}$ is a matrix of size $n\times p$, 
+then the product $\mathbf{AB}$ is a matrix of size $m\times p$.
 
 \subsection{Identity matrix}
+An identity matrix is a matrix that does not change any vector when we multiply that vector by that matrix. 
+We denote the identity matrix that preserves $n$-dimensional vectors as $\mathbf{I}_{n}$. Formally, 
+$\mathbf{I}_{n}\in\mathbb{R}_{n\times n}$, and
 
-An identity matrix is a matrix that does not change any vector when we multiply that vector by that matrix. We denote the identity matrix that preserves $n$-dimensional vectors as $\mathbf{I}_{n}.\ $ Formally, $\mathbf{I}_{n}\in\mathbb{R}_{n\times n},\ $ and
+\begin{equation}
+\forall\ \mathbf{x}\in\mathbb{R}_n,\ \mathbf{I}_{n}\mathbf{x} = \mathbf{x}
+\end{equation}
 
-\begin{align}
-\forall\ \mathbf{x}\in\mathbb{R}_n,\ \mathbf{I}_{n}\mathbf{x} = \mathbf{x}.
-\end{align}
-
-$\mathbf{I}_{n}\ $ is the $n\times n$ identity matrix; its principle diagonal elements are equal to $1$ and its offdiagonal elements are equal to $0.$
+$\mathbf{I}_{n}$ is the $n\times n$ identity matrix; its principle diagonal elements are equal to $1$ 
+and its offdiagonal elements are equal to $0$.
 
 \subsection{Zero matrix}
-
 It is denoted by $0$ the matrix of all zeroes (of relevant size).
 
 \subsection{Inverse}
-
 If $\mathbf{A}$ is a square matrix, then its inverse $\mathbf{A}^{\mathsf{-1}}$ is a matrix of the same size. The matrices that have nonzero determinant have inverses, and are called invertible.
 
 For square matrices,
