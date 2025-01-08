@@ -323,4 +323,60 @@ The dot product of two vectors can be written in terms of norms:
 
 where $\theta$ is the angle between $\mathbf{x}$ and $\mathbf{y}$.
 
+\section{Linear Combinations and Span}
+
+Formally, a linear combination of some set of vectors $\{\mathbf{v}^{(1)},\ldots, \mathbf{v}^{(n)} \}$ is given by multiplying each vector $\mathbf{v}$ by a corresponding scalar coefficient and adding the results:
+
+\begin{align}
+\sum_{i}{c}_{i}\mathbf{v}^{(i)}.
+\end{align}
+
+Any n-vector can be represented as a linear combination of the standard unit vectors. For example:
+
+\begin{align}
+\mathbf{x} &= \begin{pmatrix}a\\ b\\ c\end{pmatrix} \\ \\
+&= a\begin{pmatrix}1\\ 0\\ 0\end{pmatrix}+b\begin{pmatrix}0\\ 1\\ 0\end{pmatrix}+c\begin{pmatrix}0\\ 0\\ 1\end{pmatrix}
+\end{align}
+
+\section{Linear Independence}
+
+A set of vectors is linearly independent if no vector in the set can be represented as a linear combination of the others. Formally, vectors $\{\mathbf{v}^{(1)},\ldots, \mathbf{v}^{(n)} \}$ are linearly independent if the equation:
+
+\begin{align}
+\sum_{i=1}^n c_i\mathbf{v}^{(i)} = \mathbf{0}
+\end{align}
+
+has only the trivial solution $c_1 = c_2 = \dots = c_n = 0$.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/linear_independence.png}
+\caption{Set of two or more vectors are said to be linearly dependent if at least one of the vectors can be obtained as a linear combination of other vectors in the set.}
+\label{fig:linear_independence}
+\end{figure}
+
+\section{Linear Transformations}
+
+A linear transformation $T: \mathbb{R}^n \rightarrow \mathbb{R}^m$ is a function that preserves vector addition and scalar multiplication:
+
+\begin{align}
+T(\mathbf{x} + \mathbf{y}) &= T(\mathbf{x}) + T(\mathbf{y}) \\
+T(c\mathbf{x}) &= cT(\mathbf{x})
+\end{align}
+
+Every linear transformation can be represented as matrix multiplication:
+
+\begin{align}
+T(\mathbf{x}) = \mathbf{A}\mathbf{x}
+\end{align}
+
+where $\mathbf{A}$ is an $m \times n$ matrix.
+
+\section{References}
+
+\begin{thebibliography}{9}
+\bibitem{goodfellow2016deep} Goodfellow, I., Bengio, Y., \& Courville, A. (2016). Deep learning. MIT press.
+\bibitem{strang2016introduction} Strang, G. (2016). Introduction to linear algebra (5th ed.). Wellesley-Cambridge Press.
+\end{thebibliography}
+
 \end{document}
