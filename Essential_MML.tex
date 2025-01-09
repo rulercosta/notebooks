@@ -270,7 +270,22 @@ To analyze how many solutions the equation has, think of the columns of $\ \math
 
 In general, this kind of operation is called a \textbf{Linear Combination.} The span of a set of vectors is the set of all points obtainable by linear combination of the original vectors. This particular span is known as the \textbf{column space} or the \textbf{range} of $\ \mathbf{A}.$
 
-Solution of the equation $\ \mathbf{A}\mathbf{x}=\mathbf{b}\ $ exists if $\ \mathbf{b}\ $ lies in the span of the columns of $\ \mathbf{A}.\ $ To have a solution for all values of $\ \mathbf{b}\in\mathbb{R}^{m},\ $ the column space of $\ \mathbf{A}\ $ must be all of $\ \mathbb{R}^{m}\ $ which implies that $\ \mathbf{A}\ $ must have at least $\ m\ $ columns $(n\geq m)$.
+Solution of the equation $\ \mathbf{A}\mathbf{x}=\mathbf{b}\ $ exists if $\ \mathbf{b}\ $ lies in the span of the columns of $\ \mathbf{A}.\ $ And to have a solution for all values of $\ \mathbf{b}\in\mathbb{R}^{m},\ $ the column space of $\ \mathbf{A}\ $ must be all of $\ \mathbb{R}^{m}\ $ which implies that $\ \mathbf{A}\ $ must have atleast $\ m\ $ columns $(n>m)$.
+Otherwise, the dimensionality of $\ \mathbf{A}\ $ would be reduced (for potential value of $\ \mathbf{b}\ $ there would be no solution) For example, consider a $\ 3\times 2\ $ matrix. The span of vectors results in a $\ 2D\ $ plane within $\ \mathbb{R}^{3}\ $ but the target $\ \mathbf{b}\ $ is $\ 3D.\ $
+Modifying the value of $\ \mathbf{x}\ $ at best enables us to trace out a $\ 2D\ $ plane within $\ \mathbb{R}^{3}.\ $ The equation has a solution if and only if $\ \mathbf{b}\ $ lies on that plane.
+
+Now, $\ n>m\ $ is only a necessary condition for every point to have a solution.
+
+It is possible for some of the columns to be redundant (mutually linearly dependent; one vector being linear combination of another vector) which implies that addition of any linearly dependent vector to a set of vectors does not contribute any new points to the span of that set of vectors.
+
+\begin{figure}[h]
+\includegraphics[width=\linewidth]{figures/linear_dependence.png}
+\caption{Set of two or more vectors are said to be linearly dependent if atleast one of the vectors can be obtained as a linear combination of other vectors in the set. This is known as Linear Dependence.}
+\end{figure}
+
+This means that for the column space of the matrix to encompass all of $\ \mathbb{R}^{m}\ $, the matrix must contain at least one set of \textit{exactly} $\ m\ $ linearly independent columns. This condition is both necessary and sufficient for solutions to all values of $\ \mathbf{b}\in\mathbb{R}^{m}.$
+
+\textbf{Note:} \textit{No set of $\ m\ $ dimensional vectors can have more than $\ m\ $ mutually linearly independent columns, but a matrix with more than $\ m\ $ columns may have more than one such set.}
 
 \section{Norms}
 
@@ -295,6 +310,16 @@ For a vector $\ \mathbf{x} \ ,$ the most commonly used norm is the $\ L^{2} \ $ 
 \begin{align}
 \ \|\mathbf{x}\| = \sqrt{x_1^2 + \dots + x_n^2}
 \end{align}
+
+Norm of a vector $\ \mathbf{x} \ $ can be visualized as the distance of the point $\ \mathbf{x} \ $ from the origin in the vector space.
+
+For sake of simplicity, one can imagine a vector space of $2$ dimensions i.e., in an $\ xy\ $ plane, vector $\ \mathbf{x} \ $ defined as:
+
+\begin{align}
+\mathbf{x} = x \hat{i} + y \hat{j}
+\end{align}
+
+Then the distance of the \textit{point} $\ \mathbf{x} \ $ from the origin, is given by the \textbf{Distance formula} as follows:
 
 The $\ L^{1} \ $ norm is used when it's necessary to differentiate between zero and non-zero elements:
 
