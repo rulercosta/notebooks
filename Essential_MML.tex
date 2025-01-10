@@ -1,17 +1,23 @@
 \documentclass[12pt]{article}
 
-% Essential packages
+% Essential packages for Pandoc compatibility
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{mathtools}
-\usepackage{bm}
+\usepackage{unicode-math}
+\usepackage{xcolor}
+\usepackage{bookmark}
 
 % Custom commands for frequently used math notation
 \newcommand{\norm}[1]{\left\|#1\right\|}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
+
+% For proper handling of Unicode characters
+\DeclareUnicodeCharacter{2212}{-}
+\DeclareUnicodeCharacter{2260}{≠}
 
 \title{Essential Mathematics for Machine Learning: Linear Algebra}
 \author{Ruler Costa}
@@ -67,9 +73,9 @@ Therefore, an understanding of Set Theory is essential to grasp Linear Algebra w
 
 A scalar is just a single number, in contrast to most of the other objects studied in linear algebra, which are usually arrays of multiple numbers. When we introduce them, we specify what kind of number they are. For example, we might say
 
-\begin{align}
+\begin{equation*}
 \text{Let}\ s\ \in\ \mathbb{R}\ \ \text{be the slope of the line}.
-\end{align}
+\end{equation*}
 
 while defining a real-valued scalar, or
 
@@ -279,7 +285,7 @@ Now, $\ n>m\ $ is only a necessary condition for every point to have a solution.
 It is possible for some of the columns to be redundant (mutually linearly dependent; one vector being linear combination of another vector) which implies that addition of any linearly dependent vector to a set of vectors does not contribute any new points to the span of that set of vectors.
 
 \begin{figure}[h]
-\includegraphics[width=\linewidth]{figures/linear_dependence.png}
+\includegraphics[width=\linewidth]{./figures/linear_dependence.png}
 \caption{Set of two or more vectors are said to be linearly dependent if atleast one of the vectors can be obtained as a linear combination of other vectors in the set. This is known as Linear Dependence.}
 \end{figure}
 
@@ -375,7 +381,7 @@ has only the trivial solution $c_1 = c_2 = \dots = c_n = 0$.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\textwidth]{figures/linear_independence.png}
+\includegraphics[width=0.7\textwidth]{./figures/linear_independence.png}
 \caption{Set of two or more vectors are said to be linearly dependent if at least one of the vectors can be obtained as a linear combination of other vectors in the set.}
 \label{fig:linear_independence}
 \end{figure}
