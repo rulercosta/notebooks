@@ -6,14 +6,16 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
-\usepackage{hyperref}
+\usepackage[pdftex]{hyperref}
 \usepackage{mathtools}
 \usepackage{xcolor}
 \usepackage{bookmark}
 \usepackage{csquotes}
 \usepackage[margin=1in]{geometry}
-\usepackage{scrhack}
-\usepackage{listings}
+\usepackage{float}
+
+% Configure graphics path
+\graphicspath{{./figures/}}
 
 % Custom commands for frequently used math notation
 \newcommand{\norm}[1]{\left\|#1\right\|}
@@ -24,13 +26,14 @@
 \DeclareUnicodeCharacter{2212}{-}
 \DeclareUnicodeCharacter{2260}{≠}
 
-% Configure hyperref
+% Configure PDF metadata
 \hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,
-    urlcolor=cyan,
-    pdftitle={Essential Mathematics for Machine Learning: Linear Algebra}
+    pdftoolbar=true,
+    pdfmenubar=true,
+    pdffitwindow=false,
+    pdfborder={0 0 0},
+    pdftitle={Essential Mathematics for Machine Learning: Linear Algebra},
+    pdfauthor={Ruler Costa}
 }
 
 \title{Essential Mathematics for Machine Learning: Linear Algebra}
