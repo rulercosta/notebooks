@@ -1,0 +1,108 @@
+\chapter{Mathematical Objects}
+
+Mathematical objects are what we talk and write about when we do math. Numbers, functions, triangles, matrices, groups and more complicated things such as vector spaces and infinite series are all examples of mathematical objects. 
+Mathematical objects are abstract objects. They are not physical objects, but we think about them and talk about them as if they actually existed. 
+Mathematical objects have certain properties that other kinds of abstract objects may not have. In particular, unlike other kinds of abstract objects, math objects are inert:
+\begin{itemize}
+    \item Math objects don't move or change over time.
+    \item Math objects don't interact with other objects or with the real world.
+\end{itemize}
+
+In particular, we are concerned with the study of following mathematical objects in Linear Algebra amongst others:
+\begin{enumerate}
+    \item Scalars
+    \item Vectors
+    \item Matrices
+    \item Tensors
+\end{enumerate}
+
+Furthermore, it should be noted that higher mathematics is nothing but layers upon layers of abstraction. Intuitively, it would be right to consider \textbf{Sets} as the foundation of Linear Algebra. Therefore, an understanding of Set Theory is essential to grasp Linear Algebra with ease.
+\begin{itemize}
+    \item a line is a set of points
+    \item a plane is a set of lines
+    \item a vector is a set of points
+    \item a matrix is a set of vectors
+\end{itemize}
+
+\section{Scalars}
+
+A scalar is just a single number, in contrast to most of the other objects studied in linear algebra, which are usually arrays of multiple numbers. When we introduce them, we specify what kind of number they are. For example, we might say:
+
+\[
+\text{Let } s \in \mathbb{R} \text{ be the slope of the line, while defining a real-valued scalar, or,}
+\]
+\[
+\text{Let } n \in \mathbb{N} \text{ be the number of units, while defining a natural number scalar.}
+\]
+
+\section{Vectors}
+
+A vector is an array of numbers. The numbers are arranged in order. We can identify each individual number by its index in that ordering.
+
+\begin{align}
+\mathbf{x} := \begin{pmatrix} x_{1} \\ x_{2} \\ \vdots \\ x_{n} \end{pmatrix}, \ x_{i} \in \mathbb{R}
+\end{align}
+
+The first element of \(\mathbf{x}\) is \(\mathbf{x}_{1}\), the second element is \(\mathbf{x}_{2}\), and so on.
+If \(\mathbf{x}_{i} \in \mathbb{R} \ \forall \ i \in \{ 1,2,3,...,n\}\), then the vector \(\mathbf{x}\), having \(n\) dimensions, lies in the set formed by taking the Cartesian product of \(\mathbb{R}\) \(n\) times, denoted as \(\mathbf{x} \in \mathbb{R}^{n}\).
+\para
+
+One can think of vectors as identifying points in space, with each element giving the coordinate along a different axis. Sometimes we need to index a set of elements of a vector. In this case, we define a set containing the indices and write the set as a subscript.
+\para
+
+For example, to access \(\mathbf{x}_1\), \(\mathbf{x}_3\) and \(\mathbf{x}_6\), we define the set \(S = \{1,3,6\}\) and write \(\mathbf{x}_S\). We use the \( - \) sign to index the complement of a set. For example, \(\mathbf{x}_{-1}\) is the vector containing all elements of \(\mathbf{x}\) except for \(\mathbf{x}_1\). Similarly, \(\mathbf{x}_{-S}\) is the vector containing all elements of \(\mathbf{x}\) except for \(\mathbf{x}_1\), \(\mathbf{x}_3\) and \(\mathbf{x}_6\).
+
+\begin{align}
+f(x) = y, \ \text{where} \ x \in \mathbf{x} \ \text{and} \ y \in \mathbf{y}.
+\end{align}
+
+The ultimate goal of Machine Learning is learning functions from data, i.e., transformations or mappings from the domain onto the range of a function.
+\para
+
+The domain \(\mathbf{x}\) is usually a vector of variables or features mapping onto a vector of target values.
+
+\section{Matrices}
+
+A matrix is a 2-D array of numbers, so each element is identified by two indices instead of just one.
+
+\begin{align}
+\mathbf{A} := \begin{bmatrix} 
+A_{1,1} & A_{1,2} & \ldots & A_{1,n} \\ 
+A_{2,1} & A_{2,2} & \ldots & A_{2,n} \\ 
+\vdots & \vdots & \ddots & \vdots \\ 
+A_{m,1} & A_{m,2} & \ldots & A_{m,n}
+\end{bmatrix}, \ \text{where} \ A_{i,j} \in \mathbb{R}
+\end{align}
+
+If a real-valued matrix \(\mathbf{A}\) has a height of \(m\) (rows) and a width of \(n\) (columns), then we say that \(\mathbf{A} \in \mathbb{R}^{m \times n}\). The \(i\)-th row of \(\mathbf{A}\) is denoted by \(\mathbf{A}_{i,:}\) and the \(j\)-th column of \(\mathbf{A}\) is denoted by \(\mathbf{A}_{:,j}\). Suppose by applying some function \(f\) to \(\mathbf{A}\), the resultant matrix is \(\mathbf{B}\), then the \((i,j)\)-th element of \(\mathbf{B}\) is given by \(f(\mathbf{A})_{i,j}\).
+
+\section{Tensors}
+
+A tensor is an array with more than two axes. In the general case, an array of numbers arranged on a regular grid with a variable number of axes is known as a tensor. Suppose a tensor named \(\mathsf{A}\) has three dimensions, then the element of \(\mathsf{A}\) at coordinates \((i, j, k)\) is denoted as \(\mathsf{A}_{i,j,k}\).
+
+\section{A note on the transpose of matrices}
+
+The transpose of a matrix is the mirror image of the matrix across its principal diagonal line. The transpose of a matrix \(\mathbf{A}\) is denoted by \(\mathbf{A}^{\mathsf{T}}\).
+
+\begin{align}
+\mathbf{A} = \begin{bmatrix} 
+A_{1,1} & A_{1,2} & \ldots & A_{1,n} \\ 
+A_{2,1} & A_{2,2} & \ldots & A_{2,n} \\ 
+\vdots & \vdots & \ddots & \vdots \\ 
+A_{m,1} & A_{m,2} & \ldots & A_{m,n}
+\end{bmatrix}
+\end{align}
+
+\begin{align}
+\mathbf{A}^{\mathsf{T}} = \begin{bmatrix} 
+A_{1,1} & A_{2,1} & \ldots & A_{m,1} \\ 
+A_{1,2} & A_{2,2} & \ldots & A_{m,2} \\ 
+\vdots & \vdots & \ddots & \vdots \\ 
+A_{1,n} & A_{2,n} & \ldots & A_{m,n}
+\end{bmatrix}
+\end{align}
+
+Vectors can be thought of as matrices that contain only one column. Thus, the transpose of a vector is therefore a matrix with only one row. This can be denoted as \(\mathbf{x} = \begin{pmatrix}x_{1},x_{2},x_{3}\end{pmatrix}^{\mathsf{T}}\).
+\para
+
+A scalar can be thought of as a matrix with only a single entry. From this, we can see that a scalar is its own transpose: \(a = a^{\mathsf{T}}\).
