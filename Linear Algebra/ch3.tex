@@ -1,0 +1,177 @@
+\chapter{System of Linear Equations}
+
+\para
+
+\section{Introduction}
+
+Using the linear algebra notations and the now defined mathematical objects, we can write a system of linear equations as follows:
+
+\begin{align}
+\mathbf{A}\mathbf{x} = \mathbf{b}
+\end{align}
+
+where \(\mathbf{A} \in \mathbb{R}^{m \times n}\) is a known matrix, \(\mathbf{b} \in \mathbb{R}^{m}\) is a known vector, and \(\mathbf{x} \in \mathbb{R}^{n}\) is a vector of unknown variables.
+
+\para
+
+\section{Matrix-Vector Product}
+
+In general, an element of vector \(\mathbf{b}\) can be expressed as:
+
+\begin{align}
+\mathbf{b}_{i} = \mathbf{A}_{i,:}\mathbf{x}
+\end{align}
+
+Matrix-vector product notation provides a more compact representation for equations of this form.
+
+\clearpage
+\newpage
+
+\section{Solving the System of Equations}
+
+To solve for the unknown vector in the equation:
+
+\begin{align}
+\mathbf{A}\mathbf{x} = \mathbf{b}
+\end{align}
+
+\para
+
+Pre-multiply both sides of the equation by the inverse of matrix \(\mathbf{A}\):
+
+\begin{align}
+\mathbf{A}^{-1}\mathbf{A}\mathbf{x} &= \mathbf{A}^{-1}\mathbf{b} \\
+\mathbf{I}_{n}\mathbf{x} &= \mathbf{A}^{-1}\mathbf{b} \\
+\mathbf{x} &= \mathbf{A}^{-1}\mathbf{b}
+\end{align}
+
+\para
+
+\section{Existence of the Inverse}
+
+When \(\mathbf{A}^{-1}\) exists, several different algorithms can find it in closed form. In theory, the same inverse matrix can then be used to solve the equation many times for different values of \(\mathbf{b}\). \(\mathbf{A}^{-1}\) is primarily useful as a theoretical tool, however, and should not actually be used in practice for most software applications. Because \(\mathbf{A}^{-1}\) can be represented with only limited precision on a digital computer, algorithms that make use of the value of \(\mathbf{b}\) can usually obtain more accurate estimates of \(\mathbf{x}\).
+
+\para
+
+\section{Uniqueness and Existence of Solutions}
+
+For \(\mathbf{A}^{-1}\) to exist, the equation \(\mathbf{A}\mathbf{x} = \mathbf{b}\) must have \textit{exactly one solution for every value of \(\mathbf{b}\)}, i.e., a unique value of \(\mathbf{x}\) for every value of \(\mathbf{b}\).
+
+It is also possible for the system of equations to have no solutions or infinitely many solutions for some values of \(\mathbf{b}\). It is not possible, however, to have more than one but less than infinitely many solutions for a particular \(\mathbf{b}\); if both \(\mathbf{x}\) and \(\mathbf{y}\) are solutions, then:
+
+\begin{align}
+\mathbf{z} = \alpha\mathbf{x} + (1 - \alpha)\mathbf{y}
+\end{align}
+
+is also a solution for any real \(\alpha\).
+
+\clearpage
+\newpage
+
+\section{Linear Combinations}
+
+To analyze how many solutions the equation has, think of the columns of \(\mathbf{A}\) as specifying different directions we can travel in from the origin (the point specified by the vector of all zeros), then determine how many ways there are of reaching \(\mathbf{b}\). In this view, each element of \(\mathbf{x}\) specifies how far we should travel in each of these directions, with \(\mathbf{x}_{i}\) specifying how far to move in the direction of column \(i\):
+
+\begin{align}
+\mathbf{A}\mathbf{x} = \sum_{i} \mathbf{x}_{i} \mathbf{A}_{:,i}
+\end{align}
+
+\para
+
+In general, this kind of operation is called a \textbf{Linear Combination}. Any \(n\)-vector can be represented as a linear combination of the standard unit vectors. For example:
+
+\begin{align}
+\mathbf{x} &= \begin{pmatrix} a \\ b \\ c \end{pmatrix} \\
+&= a \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} + b \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} + c \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}
+\end{align}
+
+\begin{figure}[ht]
+    \centering
+    \includesvg[width=0.8\textwidth]{images/b-vectors-combination.svg}
+    \caption{Linear combination of vectors}
+    \label{Vector span}
+\end{figure}
+
+\clearpage
+\newpage
+
+\section{Span of Vectors}
+
+Formally, a linear combination of some set of vectors \(\{\mathbf{v}^{(1)}, \ldots, \mathbf{v}^{(n)}\}\) is given by multiplying each vector \(\mathbf{v}\) by a corresponding scalar coefficient and adding the results:
+
+\begin{align}
+\sum_{i} c_{i} \mathbf{v}^{(i)}
+\end{align}
+
+This is known as the \textbf{Span}. The span of a set of vectors is the set of all points obtainable by linear combination of the original vectors. This particular span is known as the \textbf{column space}, or the \textbf{range}, of \(\mathbf{A}\).
+
+\para
+
+\begin{figure}[ht]
+    \centering
+    \includesvg[width=1.0\textwidth]{images/b-vector-span.svg}
+    \caption{Span of vectors}
+    \label{Vector span}
+\end{figure}
+
+\para
+
+\section{Column Space and Solutions}
+
+A solution of the equation \(\mathbf{A}\mathbf{x} = \mathbf{b}\) exists if \(\mathbf{b}\) lies in the span of the columns of \(\mathbf{A}\). To have a solution for all values of \(\mathbf{b} \in \mathbb{R}^{m}\), the column space of \(\mathbf{A}\) must be all of \(\mathbb{R}^{m}\), which implies that \(\mathbf{A}\) must have at least \(m\) columns (\(n > m\)). Otherwise, the dimensionality of \(\mathbf{A}\) would be reduced (for potential values of \(\mathbf{b}\) there would be no solution). For example, consider a \(3 \times 2\) matrix. The span of vectors results in a \(2D\) plane within \(\mathbb{R}^{3}\) but the target \(\mathbf{b}\) is \(3D\). Modifying the value of \(\mathbf{x}\) at best enables us to trace out a \(2D\) plane within \(\mathbb{R}^{3}\). The equation has a solution if and only if \(\mathbf{b}\) lies on that plane.
+
+\clearpage
+\newpage
+
+\section{Linear Dependence and Independence}
+
+Now, \(n > m\) is only a necessary condition for every point to have a solution. It is possible for some of the columns to be redundant (mutually linearly dependent; one vector being a linear combination of another vector), which implies that the addition of any linearly dependent vector to a set of vectors does not contribute any new points to the span of that set of vectors.
+
+\para
+
+This means that for the column space of the matrix to encompass all of \(\mathbb{R}^{m}\), the matrix must contain at least one set of \textit{exactly} \(m\) linearly independent columns. This condition is both necessary and sufficient for solutions to all values of \(\mathbf{b} \in \mathbb{R}^{m}\).
+
+\para
+
+\begin{figure}[ht]
+    \centering
+    \includesvg[width=0.6\textwidth]{images/b-linear-independence.svg}
+    \caption{Linearly dependent and independent vectors}
+    \label{Vectors in a 3D space}
+\end{figure}
+
+\para
+
+
+Set of two or more vectors are said to be linearly dependent if at least one of the vectors can be obtained as a linear combination of other vectors in the set. This is known as Linear Dependence.
+
+\clearpage
+\newpage
+
+\section{Square Matrices and Singularity}
+
+\textbf{Note:} No set of \(m\)-dimensional vectors can have more than \(m\) mutually linearly independent columns, but a matrix with more than \(m\) columns may have more than one such set.
+
+\para
+
+We also need to ensure that whether the equation is over-constrained; thus, depending on the nature of linear dependence of the columns of the matrix, the system of equations has either zero (when it is not possible to satisfy all equations simultaneously, in the case of mutually linearly independent columns) or infinitely many solutions (when it is possible to represent the general solution as the linear combination of vectors using arbitrary constants, in the case of mutually linearly independent columns). Thus, the matrix must have at most \(m\) columns, so that the equation has at most one solution for each value of \(\mathbf{b}\).
+
+\para
+
+\section{Singular and Non-Singular Matrices}
+
+It is now evident that in the coefficient matrix of the equation \(\mathbf{A}\mathbf{x} = \mathbf{b}\), all the columns of the matrix must be linearly independent and that the number of columns must be equal to the number of rows of the matrix, i.e., \(n = m\). This means that the matrix \(\mathbf{A}\) is a \textit{square matrix}.
+
+\para
+
+A square matrix with linearly dependent columns is known as \textit{singular} (zero determinant). A square matrix has linearly independent columns if and only if the matrix is \textit{non-singular}.
+
+\para
+
+Thus, it is only possible to find the inverse of a non-singular square matrix, having linearly independent columns.
+
+\para
+
+\section{Matrix Inversion Method: Limitations}
+
+Note that the Matrix Inversion Method of solving a system of equations cannot be applied in cases where we cannot find the inverse of the coefficient matrix (obviously). Such as in cases where the matrix is not square or it is square but it is also singular (has a zero determinant). In such cases, we shall use methods other than the Matrix Inversion method in order to solve for a system of linear equations.
