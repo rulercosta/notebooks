@@ -1,0 +1,126 @@
+\chapter{Norms}
+
+\section{Introduction}
+
+In Machine Learning, the size of vectors is measured using a function called a \textbf{norm}. Formally, the \( L^{p} \) norm is given by:
+
+\begin{align}
+\|\mathbf{x}\|_{p} = \left( \sum_{i} \left| x_{i} \right| ^{p} \right) ^ {\frac {1}{p}}
+\end{align}
+
+where \( p \in \mathbb{R}, p \ge 1 \).
+\para
+
+The \( L^{p} \) norm is a \textit{mapping function}. It is used to map vectors to non-negative values. It satisfies the following properties:
+
+\begin{itemize}
+    \item \( f(x) = 0 \implies x = 0 \)
+    \item \( f(x+y) \le f(x) + f(y) \) (the \textbf{triangle inequality})
+    \item \( \forall \alpha \in \mathbb{R}, f(\alpha x) = \left| \alpha \right| f(x) \)
+\end{itemize}
+
+The norm of a vector \(\mathbf{x}\) can be visualized as the distance of the point \(\mathbf{x}\) from the origin in the vector space.
+
+\clearpage
+\newpage
+
+\section{Euclidean Norm}
+
+For a vector \(\mathbf{x}\), the \(L^{2}\) norm, also known as the \textbf{Euclidean norm}, is given by:
+
+\begin{align}
+\mathbf{x} = x \hat{i} + y \hat{j}
+\end{align}
+
+Then the distance of the \textit{point} \(\mathbf{x}\) from the origin is given by the \textbf{Distance formula} as follows:
+
+\begin{align}
+\|\mathbf{x}\| = \sqrt{x_{1}^2 + \dots + x_{n}^2}
+\end{align}
+\para
+
+In essence, the calculated distance is \textbf{Euclidean distance} of the vector \(\mathbf{x}\).
+\para
+
+For a vector \(\mathbf{x}\) of \(n\) dimensions,
+
+\begin{align}
+L^{2} &= \|\mathbf{x}\|_2 = \sqrt{x_{1}^2 + \dots + x_{n}^2}
+\end{align}
+\para
+
+In machine learning, the Euclidean norm is quite frequently used (and as seen from the coordinate geometry analogy), it is represented simply by \(\|\mathbf{x}\|\).
+\para
+
+\begin{align}
+L^{2} &= \|\mathbf{x}\|_2 = \|\mathbf{x}\| = \sqrt{x_{1}^2 + \dots + x_{n}^2} \\
+\left( L^{2} \right) ^{2} &= \|\mathbf{x}\|_2^2 = \|\mathbf{x}\|^{2} = x_{1}^2 + \dots + x_{n}^2
+\end{align}
+\para
+
+Mathematically and computationally, the squared \(L^{2}\) norm is more convenient to use. For example: the derivatives of the squared \(L^{2}\) norm with respect to each element of \(\mathbf{x}\) each depend only on the corresponding element of \(\mathbf{x}\), while all of the derivatives of the \(L^{2}\) norm depend on the entire vector.
+\para
+
+For a vector \(\mathbf{x}\):
+
+\begin{align}
+\|\mathbf{x}\| = \mathbf{x}^{T}\mathbf{x}
+\end{align}
+\para
+
+then \(L^{2}\) norm can easily be calculated.
+
+\clearpage
+\newpage
+
+\section{L1 Norm}
+
+However, in several Machine Learning applications, where it is necessary to differentiate between zero and non-zero elements, the \(L^{1}\) norm is preferred as opposed to the \(L^{2}\) norm (which grows very slowly near the origin).
+\para
+
+\begin{align}
+\|\mathbf{x}\|_{1} = \sum_{i} \left| x_{i} \right|
+\end{align}
+\para
+
+Every time an element of vector \(\mathbf{x}\) is offset from the origin by \(\epsilon\), the \(L^{1}\) norm increases by \(\epsilon\). The \(L^{1}\) norm is also used as a substitute for the number of non-zero entries.
+
+\para
+
+\section{Special Norms}
+
+Two special norms which are used quite commonly in the context of machine learning and deep learning are:
+
+\begin{itemize}
+    \item \textbf{Max norm}
+\end{itemize}
+
+\begin{align}
+\|\mathbf{x}\|_{\infty} = \max_{i} \left| x_{i} \right|
+\end{align}
+\para
+
+The Max norm of a vector gives the absolute value of the element having the largest value in the vector.
+\para
+
+\begin{itemize}
+    \item \textbf{Frobenius Norm}
+\end{itemize}
+
+\begin{align}
+\|A\|_{F} = \sqrt{\sum_{i,j} A_{i,j}^{2}}
+\end{align}
+\para
+
+which is analogous to the \(L^{2}\) norm of a vector.
+
+\section{Dot Product and Norms}
+
+The dot product of two vectors can be written in terms of norms. Specifically, using the \(L^{2}\) norm as follows:
+
+\begin{align}
+\mathbf{x}^{T}\mathbf{y} = \|\mathbf{x}\|_{2} \|\mathbf{y}\|_{2} \cos \theta
+\end{align}
+\para
+
+where \(\theta\) is the angle between \(\mathbf{x}\) and \(\mathbf{y}\).
