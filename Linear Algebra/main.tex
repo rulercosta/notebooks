@@ -1,27 +1,55 @@
 \documentclass{report}
-\usepackage{graphicx} % Required for inserting images
-\usepackage{amsmath} % For mathematical formatting
-\usepackage{amssymb}  % For additional mathematical symbols
-\usepackage{amsfonts} % For additional fonts like mathbb
-\usepackage[inkscapelatex=false]{svg}
-\newcommand{\para}{\vspace{0.5cm}} % Define a custom spacing command
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
 
+% Figure and image settings
+\usepackage{float}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg,.svg}
+\setkeys{Gin}{width=0.8\textwidth,keepaspectratio}
+
+% SVG configuration
+\usepackage[inkscapeformat=pdf,inkscapelatex=false]{svg}
+\svgsetup{
+    inkscapearea=page,
+    inkscapeversion=1.4,
+    inkscapepath=inkscape,
+    width=0.8\textwidth,
+    pretex=\begin{center},
+    posttex=\end{center}}
+
+% Prevent figures from breaking across pages
+\renewcommand{\floatpagefraction}{0.7}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.9}
+
+\newcommand{\para}{\vspace{0.5cm}}
+
+% Include pandoc-compatible settings when using pandoc
+\ifx\isPandoc\undefined
 \title{Linear Algebra\\
 {\small United College of Engineering and Research}}
 \author{Anubhav Kesarwani}
 \date{January 2025}
+\fi
 
 \begin{document}
 
+% Only show title page when not using pandoc
+\ifx\isPandoc\undefined
 \maketitle
+\fi
 
-\include{ch0}
+\input{ch0}
 
 \tableofcontents
 
-\include{ch1}
-\include{ch2}
-\include{ch3}
-\include{ch4}
+\input{ch1}
+\input{ch2}
+\input{ch3}
+\input{ch4}
 
 \end{document}
