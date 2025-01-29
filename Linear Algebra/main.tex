@@ -10,15 +10,9 @@
 \DeclareGraphicsExtensions{.pdf,.png,.jpg,.svg}
 \setkeys{Gin}{width=0.8\textwidth,keepaspectratio}
 
-% SVG configuration
+% SVG configuration - simplified approach
 \usepackage[inkscapeformat=pdf,inkscapelatex=false]{svg}
-\svgsetup{
-    inkscapearea=page,
-    inkscapeversion=1.4,
-    inkscapepath=inkscape,
-    width=0.8\textwidth,
-    pretex=\begin{center},
-    posttex=\end{center}}
+% No \svgsetup command - we'll use standard options in the \includesvg command instead
 
 % Prevent figures from breaking across pages
 \renewcommand{\floatpagefraction}{0.7}
