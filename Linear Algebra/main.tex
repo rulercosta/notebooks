@@ -5,16 +5,12 @@
 \usepackage{amssymb}
 \usepackage{amsfonts}
 
-% Figure and image settings
 \usepackage{float}
 \DeclareGraphicsExtensions{.pdf,.png,.jpg,.svg}
 \setkeys{Gin}{width=0.8\textwidth,keepaspectratio}
 
-% SVG configuration - simplified approach
 \usepackage[inkscapeformat=pdf,inkscapelatex=false]{svg}
-% No \svgsetup command - we'll use standard options in the \includesvg command instead
 
-% Prevent figures from breaking across pages
 \renewcommand{\floatpagefraction}{0.7}
 \renewcommand{\textfraction}{0.1}
 \renewcommand{\topfraction}{0.9}
@@ -22,7 +18,6 @@
 
 \newcommand{\para}{\vspace{0.5cm}}
 
-% Include pandoc-compatible settings when using pandoc
 \ifx\isPandoc\undefined
 \title{Linear Algebra\\
 {\small United College of Engineering and Research}}
@@ -32,7 +27,6 @@
 
 \begin{document}
 
-% Only show title page when not using pandoc
 \ifx\isPandoc\undefined
 \maketitle
 \fi
