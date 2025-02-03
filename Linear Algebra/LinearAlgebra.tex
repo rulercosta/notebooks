@@ -1,0 +1,43 @@
+\documentclass{report}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+
+\usepackage{float}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg,.svg}
+\setkeys{Gin}{width=0.8\textwidth,keepaspectratio}
+
+\usepackage[inkscapeformat=pdf,inkscapelatex=false]{svg}
+
+\renewcommand{\floatpagefraction}{0.7}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.9}
+
+\newcommand{\para}{\vspace{0.5cm}}
+
+\ifx\isPandoc\undefined
+\title{Linear Algebra\\
+{\small United College of Engineering and Research}}
+\author{Anubhav Kesarwani}
+\date{January 2025}
+\fi
+
+\begin{document}
+
+\ifx\isPandoc\undefined
+\maketitle
+\fi
+
+\input{ch0}
+
+\tableofcontents
+
+\input{ch1}
+\input{ch2}
+\input{ch3}
+\input{ch4}
+
+\end{document}
