@@ -1,0 +1,40 @@
+\documentclass{report}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+
+\usepackage{float}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg,.svg}
+\setkeys{Gin}{width=0.8\textwidth,keepaspectratio}
+
+\usepackage[inkscapeformat=pdf,inkscapelatex=false]{svg}
+
+\renewcommand{\floatpagefraction}{0.7}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.9}
+
+\newcommand{\para}{\vspace{0.5cm}}
+
+\ifx\isPandoc\undefined
+\title{Modeling Soil Liquefaction\\
+{\small MNNIT Prayagraj}}
+\author{Anubhav Kesarwani}
+\date{June 2024}
+\fi
+
+\begin{document}
+
+\ifx\isPandoc\undefined
+\maketitle
+\fi
+
+\tableofcontents
+
+\include{intro}
+\include{eval}
+\include{crr}
+
+\end{document}
