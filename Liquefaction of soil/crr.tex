@@ -1,0 +1,65 @@
+\chapter{Evaluating CRR}
+
+\section*{Using Empirical Results from Research Studies}
+
+\section{Empirical Formula for \(\mathrm{CRR}_{7.5}\)}
+The following formulae are derived by accurate determination involving empirical correlations from research on SPT or CPT data:
+
+\begin{equation}
+    \mathrm{CRR}_{7.5} = \frac{1}{34 - (\mathrm{N1})_{60}} + \frac{(\mathrm{N1})_{60}}{135} + \frac{50}{(10 \cdot (\mathrm{N1})_{60} + 45)^2} - \frac{1}{200}
+\end{equation}
+
+\begin{itemize}
+    \item where
+    \begin{itemize}
+        \item \(\mathrm{CRR}_{7.5}\) is the \(\mathrm{CRR}\) corresponding to a magnitude 7.5 earthquake.
+    \end{itemize}
+\end{itemize}
+
+\section{Calculation of \(\mathrm{CRR}\)}
+Furthermore, \(\mathrm{CRR}\) can be calculated as follows:
+
+\begin{equation}
+    \mathrm{CRR} = \mathrm{CRR}_{7.5} \times \mathrm{MSF} \times \mathrm{K}_{\sigma}
+\end{equation}
+
+\begin{itemize}
+    \item where
+    \begin{itemize}
+        \item \(\mathrm{CRR}_{7.5}\) is the \(\mathrm{CRR}\) corresponding to a magnitude 7.5 earthquake.
+        \item \(\mathrm{MSF}\) is the Magnitude Scaling Factor, which adjusts \(\mathrm{CRR}_{7.5}\) for the actual earthquake magnitude. It can be calculated as follows:
+    \end{itemize}
+\end{itemize}
+
+\clearpage
+\newpage
+
+\section{Magnitude Scaling Factor}
+\(\mathrm{MSF}\) is the magnitude scaling factor. It can be calculated as follows:
+
+\begin{equation}
+    \mathrm{MSF} = \frac{10^{2.24}}{\mathrm{M}_{w}^{2.56}}
+\end{equation}
+
+\begin{itemize}
+    \item where
+    \begin{itemize}
+        \item \(\mathrm{M}_{w}\) is the magnitude of the earthquake.
+    \end{itemize}
+\end{itemize}
+
+\section{Correction Factor}
+\(\mathrm{K}_{\sigma}\) is the correction factor, which adjusts \(\mathrm{CRR}\) for varying overburden stress at different depths or soil conditions. It can be calculated as follows:
+
+\begin{equation}
+    \mathrm{K}_{\sigma} = \left(\frac{\sigma_{v0}^{'}}{P_{a}}\right)^{\alpha}
+\end{equation}
+
+\begin{itemize}
+    \item where
+    \begin{itemize}
+        \item \(\sigma_{v0}^{'}\) is the effective overburden stress.
+        \item \(P_{a}\) is the atmospheric pressure, usually taken to be 100 kPa.
+        \item \(\alpha\) is a correction constant, depending on soil type and conditions, usually ranging from 0.4 to 0.7.
+    \end{itemize}
+\end{itemize}
