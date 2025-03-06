@@ -1,1 +1,1 @@
-# Essentials for Data Analytics
+# Jupyter Notebooks
